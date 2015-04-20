@@ -4,6 +4,7 @@
 angular.module('myApp', [
   'ngRoute',
   'app.routes',
+  'ngAnimate',
   'myApp.version'
 ])
 

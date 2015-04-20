@@ -4,8 +4,11 @@ $(document).ready(function() {
   var progressBar = $('progress');
   var max, value;
 
+  //set a timeout of 300ms because you can't read the correct height until angular renders
   setTimeout(function() {
-    max = $(document).height();
+    var docHeight = $(document).height();
+    var winHeight = $(window).height();
+    max = docHeight - winHeight;
     progressBar.attr('max', max);
   }, 300);
       
