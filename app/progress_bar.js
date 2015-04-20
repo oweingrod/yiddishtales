@@ -1,12 +1,14 @@
 
 
 $(document).ready(function() {
-  var winHeight = $(window).height(), 
-      docHeight = getDocHeight(),
-      progressBar = $('progress'),
-      max, value;
+  var progressBar = $('progress');
+  var max, value;
 
-      max = docHeight - winHeight;
+  setTimeout(function() {
+    max = $(document).height();
+    progressBar.attr('max', max);
+  }, 300);
+      
 
 
   /* Set the max scrollable area */
@@ -14,17 +16,12 @@ $(document).ready(function() {
      value = $(window).scrollTop();
      progressBar.attr('value', value);
      console.log(value);
-     console.log('Docheight ' + docHeight);
-     console.log('Winheight ' + winHeight);
+     console.log(max);
   });
+
+
+
+
+
+
 });
-
-
-function getDocHeight() {
-    var D = document;
-    return Math.max(
-        D.body.scrollHeight, D.documentElement.scrollHeight,
-        D.body.offsetHeight, D.documentElement.offsetHeight,
-        D.body.clientHeight, D.documentElement.clientHeight
-    );
-}

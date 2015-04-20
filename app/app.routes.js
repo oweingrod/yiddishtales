@@ -9,8 +9,7 @@ angular.module('app.routes', ['ngRoute'])
   });
 
   $routeProvider.when('/flour', {
-  	templateUrl: 'flour/flour.html',
-  	controller: 'MainCtrl'
+  	templateUrl: 'flour/flour.html'
   });
 
   

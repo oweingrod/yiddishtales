@@ -266,9 +266,10 @@ progress::-moz-progress-bar {
   }
 
   progress {
-    top: 165px;
-    width: 60px;
+    top: 14.25%;
     left: 86%;
+    width: 70px;
+    height: 35px;
   }
 }
 
@@ -281,9 +282,14 @@ progress::-moz-progress-bar {
   }
 
   progress {
-    top: 130px;
-    left: 712px;
-    width: 80px;
+    top: 7%;
+    width: 90px;
+    height: 40px;
+    left: 84.25%;
+    -webkit-transform: rotate(-20deg);
+      -ms-transform: rotate(-20deg);
+          transform: rotate(-20deg); 
+
   }
 }
 
