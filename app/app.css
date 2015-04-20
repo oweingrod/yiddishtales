@@ -1,30 +1,298 @@
 /* app css stylesheet */
 
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+/* Config */
+
+@font-face {
+    font-family: 'big_caslon';
+    src: url('fonts/ufonts.com_big-caslon-medium-webfont.eot');
+    src: url('fonts/ufonts.com_big-caslon-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/ufonts.com_big-caslon-medium-webfont.woff2') format('woff2'),
+         url('fonts/ufonts.com_big-caslon-medium-webfont.woff') format('woff'),
+         url('fonts/ufonts.com_big-caslon-medium-webfont.ttf') format('truetype'),
+         url('fonts/ufonts.com_big-caslon-medium-webfont.svg#big_caslonmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
-.menu:before {
-  content: "[";
+
+/* Globals */
+
+
+body {
+  font-size: 16px;
+  font-family: 'Libre-Baskerville', serif;
 }
 
-.menu:after {
-  content: "]";
+h1 {
+  padding: 0px;
 }
 
-.menu > li {
+/* Navigation */
+
+.nav {
+  margin-top: 30px;
+}
+
+.nav span{
+  left: 10px;
+  text-align: center;
+  margin: 0 auto;
+  top: 15px;
+  position: absolute;
+  font-family: 'Libre-Baskerville', serif;
+  font-size: 1.25em;
+
+}
+
+.nav > li {
   display: inline;
+  margin-top: 15px;
+  font-family: 'Libre Baskerville', serif;
+  font-size: .75em;
 }
 
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
+.nav ul {
+    *zoom:1;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+.nav ul:before,.nav ul:after {
+    content:"";
+    display:table;
+}
+.nav ul:after {
+    clear:both;
+}
+.nav ul > li {
+    float:left;
+    position:relative;
+}
+.nav a {
+    display:block;
+    padding:10px 10px;
+    line-height:1.2em;
+    color: red;
+    transition: color .5s;
+    text-decoration: none;
+}
+.nav a:hover {
+    text-decoration:none;
+    color: black;
+}
+.nav li ul li {
+    width:200px;
+}
+.nav li ul a {
+    border:none;
+}
+.nav li ul a:hover {
 }
 
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
+.nav li ul {
+    position:absolute;
+    left:0;
+    top:36px;
+    z-index:1;
+    visibility:hidden;
+    opacity:0;
+    filter:alpha(opacity=0);
+    -webkit-transition:200ms ease;
+    -moz-transition:200ms ease;
+    -o-transition:200ms ease;
+    transition:200ms ease;
 }
+.nav ul > li:hover ul {
+    visibility:visible;
+    opacity:1;
+    filter:alpha(opacity=100);
+}
+  
+    /* Dropdown fade in */
+    .nav li ul {
+    position:absolute;
+    left:0;
+    top:36px;
+    z-index:1;
+    visibility:hidden;
+    opacity:0;
+    filter:alpha(opacity=0);
+    -webkit-transition:200ms ease;
+    -moz-transition:200ms ease;
+    -o-transition:200ms ease;
+    transition:200ms ease;
+    }
+
+    nav ul > li:hover ul {
+    visibility:visible;
+    }
+
+/* End Navigation */
+
+/* Injection Globals */
+
+
+.h1:last-child {
+  margin-top: -20px;
+}
+
+
+
+
+hr {
+  width: 80%;
+  border: 1px solid black;
+}
+
+/* About View Specific */
+
+
+ .wrapper {
+    width: 80%;
+    float: right;
+    line-height: 1.7em;
+ }
+
+ .wrapper p {
+  margin-top: 15px;
+  width: 80%;
+  font-family: "Libre-Baskerville", serif;
+  text-indent: 25px;
+}
+
+.wrapper h2 {
+  font-family: "Libre-Baskerville", serif;
+  font-weight: 700;
+}
+
+/* Story specific */
+progress {
+  /* Positioning */
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  /* Dimensions */
+  width: 100%;
+  height: 5px;
+
+  /* Reset the appearance */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+
+  /* Get rid of the default border in Firefox/Opera. */
+  border: none;
+
+  /* Progress bar container for Firefox/IE10+ */
+  background-color: transparent;
+
+  /* Progress bar value for IE10+ */
+  color: red;
+}
+
+progress::-webkit-progress-bar {
+  background-color: transparent;
+}
+
+progress::-webkit-progress-value {
+  background-color: red;
+}
+
+progress::-moz-progress-bar {
+  background-color: red;
+}
+
+.header_wrapper {
+  float: right;
+  position: absolute;
+  right: 5%;
+  top: -3px;
+  padding-bottom: 0;
+  font-family: 'bigcaslon', serif;
+  font-size: .75em;
+}
+
+
+
+.wrapper_story {
+    width: 80%;
+    float: right;
+    
+    padding-bottom: 50px;
+ }
+
+.wrapper_story p {
+  margin-top: 15px;
+  width: 80%;
+  font-family: "Libre-Baskerville", serif;
+  font-size: 1em;
+  line-height: 1.7em;
+}
+
+
+.wrapper_story .dialogue {
+  margin-left: 25px;
+  width: 75%;
+
+}
+
+.wrapper_story h2 {
+  font-family: "Libre-Baskerville", serif;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+/* Hellooooo media queries */
+
+@media (min-width: 720px) {
+  
+  .nav > li {
+    font-size: 1em;
+  }
+
+  .nav span {
+    font-size: 1.5em;
+  }
+
+  .wrapper_story p {
+    font-size: 1.25em;
+  }
+
+  .header_wrapper {
+    position: fixed;
+    top: 85px;
+  }
+
+  progress {
+    top: 165px;
+    width: 60px;
+    left: 86%;
+  }
+}
+
+
+@media (min-width: 840px) {
+
+  .header_wrapper {
+    font-size: 1em;
+    top: 25px;
+  }
+
+  progress {
+    top: 130px;
+    left: 712px;
+    width: 80px;
+  }
+}
+
+@media screen and (min-width: 1200) {
+  .header_wrapper {
+    font-size: 1.5em;
+
+  }
+}
+
+
+
