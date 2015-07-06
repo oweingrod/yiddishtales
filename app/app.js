@@ -2,15 +2,15 @@
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
-  'ngRoute',
-  'app.routes',
-  'ngAnimate',
-  'myApp.version'
-])
+	'ngRoute',
+	'app.routes',
+	'ngAnimate',
+	'mainController'
+	])
 
 
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/'});
+.config(['$routeProvider', function($routeProvider) {
+	$routeProvider.otherwise({redirectTo: '/'});
 }]);
 
 

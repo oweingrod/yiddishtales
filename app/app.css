@@ -3,15 +3,15 @@
 /* Config */
 
 @font-face {
-    font-family: 'big_caslon';
-    src: url('fonts/ufonts.com_big-caslon-medium-webfont.eot');
-    src: url('fonts/ufonts.com_big-caslon-medium-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/ufonts.com_big-caslon-medium-webfont.woff2') format('woff2'),
-         url('fonts/ufonts.com_big-caslon-medium-webfont.woff') format('woff'),
-         url('fonts/ufonts.com_big-caslon-medium-webfont.ttf') format('truetype'),
-         url('fonts/ufonts.com_big-caslon-medium-webfont.svg#big_caslonmedium') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'big_caslon';
+  src: url('fonts/ufonts.com_big-caslon-medium-webfont.eot');
+  src: url('fonts/ufonts.com_big-caslon-medium-webfont.eot?#iefix') format('embedded-opentype'),
+  url('fonts/ufonts.com_big-caslon-medium-webfont.woff2') format('woff2'),
+  url('fonts/ufonts.com_big-caslon-medium-webfont.woff') format('woff'),
+  url('fonts/ufonts.com_big-caslon-medium-webfont.ttf') format('truetype'),
+  url('fonts/ufonts.com_big-caslon-medium-webfont.svg#big_caslonmedium') format('svg');
+  font-weight: normal;
+  font-style: normal;
 
 }
 
@@ -22,6 +22,7 @@
 body {
   font-size: 16px;
   font-family: 'Libre-Baskerville', serif;
+  max-height: 100vh;
 }
 
 h1 {
@@ -31,7 +32,7 @@ h1 {
 /* Navigation */
 
 .nav {
-  margin-top: 30px;
+  margin-top: 25px;
 }
 
 .nav span{
@@ -40,97 +41,131 @@ h1 {
   margin: 0 auto;
   top: 15px;
   position: absolute;
-  font-family: 'Libre-Baskerville', serif;
+  font-family: 'big_caslon', serif;
   font-size: 1.25em;
-  position: fixed;
 }
 
 .nav > li {
   display: inline;
   margin-top: 15px;
   font-family: 'Libre Baskerville', serif;
-  font-size: .75em;
+  font-size: .9em;
 }
 
 .nav ul {
-    *zoom:1;
-    list-style:none;
-    margin:0;
-    padding:0;
-    position: fixed;
+  *zoom:1;
+  list-style:none;
+  margin:0;
+  padding:0;
+
 }
 .nav ul:before,.nav ul:after {
-    content:"";
-    display:table;
+  content:"";
+  display:table;
 }
 .nav ul:after {
-    clear:both;
+  clear:both;
 }
 .nav ul > li {
-    float:left;
-    position:relative;
+  float:left;
+  position:relative;
 }
 .nav a {
-    display:block;
-    padding:10px 10px;
-    line-height:1.2em;
-    color: red;
-    transition: color .5s;
-    text-decoration: none;
+  display:block;
+  padding:10px 10px;
+  line-height:1.2em;
+  color: red;
+  transition: color .1s;
+  text-decoration: none;
 }
 .nav a:hover {
-    text-decoration:none;
-    color: black;
+  text-decoration:none;
+  color: black;
 }
 .nav li ul li {
-    width:200px;
+  width: 70px;
 }
 .nav li ul a {
-    border:none;
+  border:none;
+  font-size: 1em;
 }
 .nav li ul a:hover {
 }
 
 .nav li ul {
-    position:absolute;
-    left:0;
-    top:36px;
-    z-index:1;
-    visibility:hidden;
-    opacity:0;
-    filter:alpha(opacity=0);
-    -webkit-transition:200ms ease;
-    -moz-transition:200ms ease;
-    -o-transition:200ms ease;
-    transition:200ms ease;
+  position:absolute;
+  left:0;
+  top:36px;
+  width: 70px;
+  z-index:1;
+  visibility:hidden;
+  opacity:0;
+  filter:alpha(opacity=0);
+  -webkit-transition:50ms ease;
+  -moz-transition:50ms ease;
+  -o-transition:50ms ease;
+  transition:50ms ease;
 }
 .nav ul > li:hover ul {
-    visibility:visible;
-    opacity:1;
-    filter:alpha(opacity=100);
+  visibility:visible;
+  opacity:1;
+  filter:alpha(opacity=100);
 }
-  
-    /* Dropdown fade in */
-    .nav li ul {
-    position:absolute;
-    left:0;
-    top:36px;
-    z-index:1;
-    visibility:hidden;
-    opacity:0;
-    filter:alpha(opacity=0);
-    -webkit-transition:200ms ease;
-    -moz-transition:200ms ease;
-    -o-transition:200ms ease;
-    transition:200ms ease;
-    }
 
-    nav ul > li:hover ul {
-    visibility:visible;
-    }
+/* Dropdown fade in */
+.nav li ul {
+  position:absolute;
+  left:0;
+  top:36px;
+  z-index:1;
+  visibility:hidden;
+  opacity:0;
+  filter:alpha(opacity=0);
+  -webkit-transition:200ms ease;
+  -moz-transition:200ms ease;
+  -o-transition:200ms ease;
+  transition:200ms ease;
+}
 
+nav ul > li:hover ul {
+  visibility:visible;
+}
+
+
+.title {
+  font-size: 1em;
+  font-family: 'Libre-Baskerville', serif;
+  position: relative;
+  bottom: 52px;
+  left: 75%;
+}
 /* End Navigation */
 
+/* Home */
+
+.cover_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: -75px;
+  min-height: 100vh;
+  
+}
+
+.description {
+  position: relative;
+  top: 10px;
+  width: 90%;
+  margin: 0 auto;
+  font-family: 'Libre-Baskerville', serif;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+.cover_wrapper img {
+  max-width: 100%;
+}
 /* Injection Globals */
 
 
@@ -140,22 +175,24 @@ h1 {
 
 
 
-
 hr {
   width: 80%;
   border: 0px 0px 3px solid black 0px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 75px;
 }
 
 /* About View Specific */
 
 
- .wrapper {
-    width: 80%;
-    float: right;
-    line-height: 1.7em;
- }
+.wrapper {
+  width: 80%;
+  float: right;
+  line-height: 1.7em;
+}
 
- .wrapper p {
+.wrapper p {
   margin-top: 15px;
   width: 80%;
   font-family: "Libre-Baskerville", serif;
@@ -167,21 +204,25 @@ hr {
   font-weight: 700;
 }
 
+.wrapper h3 {
+  font-family: "Libre-Baskerville", serif;
+
+}
 /* Story specific */
 progress {
   /* Positioning */
   position: fixed;
   left: 0;
   top: 0;
-
+  z-index: 0;
   /* Dimensions */
   width: 100%;
   height: 5px;
 
   /* Reset the appearance */
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 
   /* Get rid of the default border in Firefox/Opera. */
   border: none;
@@ -208,21 +249,51 @@ progress::-moz-progress-bar {
 .header_wrapper {
   float: right;
   position: absolute;
-  right: 5%;
-  top: -3px;
+  right: 10%;
+  top: 20px;
   padding-bottom: 0;
   font-family: 'bigcaslon', serif;
-  font-size: .75em;
+  font-size: .5em;
+
 }
 
-.wrapper_story {
-    width: 80%;
-    float: right;
-    
-    padding-bottom: 50px;
- }
+.title_wrapper{
+  position: relative;
+}
 
-.wrapper_story p {
+.title_wrapper span:last-child
+{
+  color: red;
+}
+
+
+.title_wrapper .title {
+  font-family: "Libre-Baskerville", serif;
+  font-weight: 400;
+  font-size: 1.5em;
+  z-index: 1;
+  padding-bottom: 0px;
+  line-height: .75em;
+  top: 5px;
+
+}
+
+.title_hr {
+  color: red;
+  height: 1px;
+  padding: none;
+  width: 50px;
+  position: relative;
+}
+
+.story_wrapper {
+  width: 75%;
+  float: right;
+
+  padding-bottom: 50px;
+}
+
+.story_wrapper p {
   margin-top: 15px;
   width: 80%;
   font-family: "Libre-Baskerville", serif;
@@ -231,90 +302,114 @@ progress::-moz-progress-bar {
 }
 
 
-.wrapper_story .dialogue {
+.story_wrapper .dialogue {
   margin-left: 25px;
   width: 75%;
 
 }
 
-.wrapper_story h2 {
+.story_wrapper h3 {
   font-family: "Libre-Baskerville", serif;
-  font-weight: 700;
-  font-size: 2em;
+  font-size: 1.5em;
 }
+
 
 /* Hellooooo media queries */
 
+@media (min-width: 600px) {
+  .title {
+    font-size: 2.25em;
+  }
+  .header_wrapper {
+    top: 17px;
+  }
+}
+
 @media (min-width: 720px) {
-  
+
   .nav > li {
     font-size: 1em;
   }
 
+  
   .nav span {
     font-size: 1.5em;
   }
 
-  .wrapper_story p {
-    font-size: 1.25em;
+  .title {
+    font-size: 2.75em;
   }
 
   .header_wrapper {
-    position: fixed;
-    top: 85px;
+    top: 15px;
   }
 
-  progress {
-    top: 14.25%;
-    left: 86%;
-    width: 70px;
-    height: 35px;
-  }
 }
 
 
 @media (min-width: 840px) {
 
   .header_wrapper {
-    font-size: 1em;
-    top: 25px;
+    top: 10px;
   }
 
-  progress {
-    top: 6.5%;
-    width: 90px;
-    height: 40px;
-    left: 84.25%;
-    -webkit-transform: rotate(-20deg);
-      -ms-transform: rotate(-20deg);
-          transform: rotate(-20deg); 
-
+  .story_wrapper p {
+    font-size: 1.25em;
   }
+
+
 }
 
 @media (min-width: 1200px) {
-  .header_wrapper {
-    margin-top: -40px;
+
+
+  .title {
+    font-size: 3.75em;
   }
 
-  .header_wrapper h1 {
-    font-size: 2.5em;
+  .story_wrapper p {
+    font-size: 1.75em;
   }
 
-  .wrapper_story p {
-    font-size: 1.5em;
+  .story_wrapper {
+    margin-top: 100px;
   }
 
+  .nav_wrapper {
+    position: fixed;
+  }
   .nav_wrapper li {
-    font-size: 1.2em;
+    font-size: 1.3em;
+    margin-top: 20px;
   }
 
   .nav_wrapper span {
+    font-family: 'bigcaslon', serif;
     font-size: 1.75em;
     padding-bottom: 20px;
   }
 
+  @media (min-width: 1400px) {
+    .nav {
+      position: fixed;
+    }
+    .nav span {
+      position: fixed;
+      top: 15;
+    }
+
+    .story_wrapper {
+      margin-top: 125px;
+    }
+
+    .title {
+      font-size: 4em;
+      position: fixed;
+    }
+  }
+
 }
+
 
 /*global animate css shizzz*/
 
@@ -322,12 +417,12 @@ progress::-moz-progress-bar {
 
 .ng-enter {
   -webkit-animation: fadeIn 0.7s;
-          animation: fadeIn 0.7s;
+  animation: fadeIn 0.7s;
 }
 
 .ng-leave {
-  -webkit-animation: fadeOut 0.4s;
-          animation: fadeOut 0.4s;
+  -webkit-animation: fadeOut 0.2s;
+  animation: fadeOut 0.2s;
 }
 
 
